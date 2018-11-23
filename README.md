@@ -17,7 +17,7 @@ This implementation uses plain C++ without the interfaces to R. This should allo
 
 The main interfaces are the same as in the R-Package. An example how to read a comma-separated file and cluster the data points is shown below:
 
-```Cpp
+```cpp
 int main()
 {
 
