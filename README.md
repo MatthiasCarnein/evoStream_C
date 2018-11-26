@@ -15,8 +15,7 @@ In addition, this implementation also allows to evaluate a fixed number of gener
 This is a port of the original code from the R-Package. This implementation uses plain C++ without the interfaces to R. This should allow easier interfacing for other languages. It also makes use of C++11 features. The main interfaces are the same as in the R-Package. An example how to read a comma-separated file and cluster the data points is shown below:
 
 ```cpp
-int main()
-{
+int main(){
 
   // Init evoStream
   EvoStream evo = EvoStream(0.05, 0.001, 100, 4, .8, .5, 100, 2*4, 1000);
