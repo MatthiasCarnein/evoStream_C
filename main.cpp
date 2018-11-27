@@ -13,9 +13,9 @@ int main(){
   evo.cluster(observation); // cluster new observation
   evo.get_microclusters();
   evo.get_microweights();
-  evo.recluster(5); // evaluate 100 more macro solutions
   evo.get_macroclusters();
   evo.get_macroweights();
+  evo.recluster(100); // evaluate 100 more macro solutions
   evo.microToMacro();
 
 
