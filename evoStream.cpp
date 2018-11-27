@@ -63,6 +63,10 @@ std::vector<double> EvoStream::get_microweights(){
 
 std::vector< std::vector<double> > EvoStream::get_macroclusters(){
 
+	if(!this->init){
+		return(std::vector<std::vector<double> >(0));
+	}
+
 	if(this->reclusterGenerations!=0 && this->upToDate==0){
 	  this->recluster(reclusterGenerations);
 	  this->upToDate=1;
@@ -85,6 +89,10 @@ std::vector< std::vector<double> > EvoStream::get_macroclusters(){
 
 std::vector<double> EvoStream::get_macroweights(){
 
+	if(!this->init){
+		return(std::vector<double>(0));
+	}
+
 	if(reclusterGenerations!=0 && this->upToDate==0){
 	  this->recluster(reclusterGenerations);
 	  this->upToDate=1;
@@ -104,6 +112,11 @@ std::vector<double> EvoStream::get_macroweights(){
 
 
 std::vector<int> EvoStream::microToMacro(){
+
+	if(!this->init){
+		return(std::vector<int>(0));
+	}
+
 	std::vector<std::vector<double> > centres = this->get_macroclusters();
 	std::vector<int> assignment = this->getAssignment(centres);
 	return(assignment);
