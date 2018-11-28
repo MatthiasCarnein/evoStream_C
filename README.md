@@ -36,7 +36,7 @@ int main(){
 
 
   // Main Interface:
-  EvoStream evo = EvoStream(0.05, 0.001, 100, 4, .8, .001, 100, 2*4, 250); // init
+  EvoStream evo = EvoStream(0.05, 0.001, 100, 4, .8, .001, 100, 2*4, 1000); // init
   std::vector<double> observation { 10.0, 20.0, 30.0 }; // read observation
   evo.cluster(observation); // cluster new observation
   evo.get_microclusters();
@@ -48,7 +48,7 @@ int main(){
 
 
   // Full Example: Read CSV file (here: comma-separated, numeric values)
-  evo = EvoStream(0.05, 0.001, 100, 4, .8, .001, 100, 2*4, 250);
+  evo = EvoStream(0.05, 0.001, 100, 4, .8, .001, 100, 2*4, 1000);
 
   std::ifstream in("data.csv");
   std::string line;
@@ -77,7 +77,7 @@ int main(){
   }
 
 
-  // Get macro-clusters (here: performs an additional 250 reclustering steps, see parameter)
+  // Get macro-clusters (here: performs an additional 1000 reclustering steps, see parameter)
   std::vector< std::vector<double> > macro = evo.get_macroclusters(); // reclustering 
   std::vector<double> macroWeights = evo.get_macroweights(); 
 
